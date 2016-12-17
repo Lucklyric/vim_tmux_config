@@ -45,7 +45,7 @@ set softtabstop=4
 set autoindent
 
 set laststatus=2
-
+syntax on
 let g:airline_theme='tomorrow'
 colorscheme darkBlue 
 noremap <F3> :Autoformat<CR>
