@@ -8,5 +8,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 2. Copy configure file
 ```
-cp {.vimrc,.tmux.conf} ~/
+cp -t ~/ .vimrc .tmux.conf
+```
+3. Open Vime and install plugins
+```
+:PluginInstall
 ```
