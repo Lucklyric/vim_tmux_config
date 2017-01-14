@@ -21,6 +21,7 @@ My Vim Tmux Configureation
  ```
  :PluginInstall
  ```
+
 5. Reload TMUX
  ```
  # type this in terminal if tmux is already running
