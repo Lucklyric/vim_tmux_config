@@ -21,3 +21,10 @@ My Vim Tmux Configureation
  ```
  :PluginInstall
  ```
+5. Reload TMUX
+ ```
+ # type this in terminal if tmux is already running
+ $ tmux source ~/.tmux.conf
+ ```
+ Press prefix + I (capital I, as in Install) to fetch the plugin.
+ TPM [Link](https://github.com/tmux-plugins/tpm)
