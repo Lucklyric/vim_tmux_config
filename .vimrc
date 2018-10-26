@@ -109,4 +109,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 
 "YouCompleteMe configuration
 noremap <leader>jd :YcmCompleter GoTo<CR>
-
+let g:ycm_confirm_extra_conf=0
+set completeopt=longest,menu
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_cache_omnifunc=0
+let g:ycm_complete_in_strings = 1
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
