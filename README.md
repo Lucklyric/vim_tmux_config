@@ -17,7 +17,7 @@ My Vim Tmux Configureation
  cp -t ~/ .vimrc .tmux.conf
  ```
 
-4. Open Vime and install plugins
+4. Open Vim and install plugins
  ```
  :PluginInstall
  ```
