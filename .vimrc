@@ -59,7 +59,6 @@ noremap <F3> :Autoformat<CR>
 
 " Better copy & paste
 set pastetoggle=<F2>
-set clipboard=unamedplus
 
 " Window movement
 map <c-j> <c-w>j
@@ -89,6 +88,9 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set nu
+set cursorline
+
 
 " Disable stupid backup
 set nobackup
