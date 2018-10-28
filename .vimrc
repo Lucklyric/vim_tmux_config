@@ -4,8 +4,8 @@ autocmd! bufwritepost .vimrc source %
 
 set nocompatible              " be iMproved, required
 
-
 filetype off                  " required
+filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -25,6 +25,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +58,7 @@ syntax on
 let g:airline_theme='tomorrow'
 colorscheme darkBlue
 noremap <F3> :Autoformat<CR>
+let mapleader = ","
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -71,8 +74,8 @@ nmap <leader>n :tabprevious<CR>
 nmap <leader>m :tabnext<CR>
 
 " easier moving of code blocks
-vnoremap < <gv 
-vnoremap > >gv 
+vnoremap < <gv
+vnoremap > >gv
 
 " NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
@@ -97,9 +100,14 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Python yapf formatter
+autocmd FileType python nnoremap <leader>y :0,$!yapf --style='{based_on_style=pep8,spaces_before_comment=4,indent_width:4,column_limit:160}'<Cr><C-o>
 
 
-""" Plugin Configuration 
+""""""""""""""""""""""""
+" Plugin Configuration
+"
+""""""""""""""""""""""""
 
 " NERDTreeConfiguration
 autocmd StdinReadPre * let s:std_in=1
@@ -109,7 +117,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 "let NERDTreeMinimalUI=1
 
-"YouCompleteMe configuration
+
+"""YouCompleteMe configuration
 noremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
@@ -117,4 +126,26 @@ let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
+let g:ycm_add_preview_to_completeopt=0
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
+
+""" NERD Commenter
+" add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' },'python':{'left':'#'} }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
