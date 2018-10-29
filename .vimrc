@@ -63,6 +63,12 @@ let mapleader = ","
 " Better copy & paste
 set pastetoggle=<F2>
 
+" Fold related
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " Window movement
 map <c-j> <c-w>j
 map <c-k> <c-w>k
