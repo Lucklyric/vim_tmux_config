@@ -1,3 +1,4 @@
+" Terminal Foreground 256 168 251
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
