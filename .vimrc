@@ -1,4 +1,4 @@
-" Terminal Foreground 256 168 251
+" Terminal Foreground 256 168 251 HEX  #ffa8fb
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
