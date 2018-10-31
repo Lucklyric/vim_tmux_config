@@ -19,14 +19,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'townk/vim-autoclose'
+" Plugin 'townk/vim-autoclose'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'tenfyzhong/CompleteParameter.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tenfyzhong/CompleteParameter.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -158,10 +159,10 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 """ Parameter Complete 
-" set cmdheight=2
-" let g:complete_parameter_echo_signature = 1
-" inoremap <silent><expr> ( complete_parameter#pre_complete("()")
-" smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-" imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-" smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-" imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+set cmdheight=2
+let g:complete_parameter_echo_signature = 1
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
