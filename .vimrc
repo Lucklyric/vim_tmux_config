@@ -1,3 +1,6 @@
+" File  : /home/alvinsun/.vimrc
+" Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
+" Date  : 31.10.2018
 " Terminal Foreground 256 168 251 HEX  #ffa8fb
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -19,7 +22,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
-" Plugin 'townk/vim-autoclose'
+Plugin 'townk/vim-autoclose'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -28,6 +31,8 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tenfyzhong/CompleteParameter.vim'
+" Plugin 'alpertuna/vim-header'
+Plugin 'Lucklyric/vim-header'
 
 
 " All of your Plugins must be added before the following line
@@ -166,3 +171,11 @@ smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+
+""" Auto Header
+let g:header_field_author = 'Alvin(Xinyao) Sun'
+let g:header_field_author_email = 'xinyao1@ualberta.ca'
+let g:header_auto_add_header = 0
+let g:header_field_modified_timestamp = 0
+let g:header_field_modified_by = 0
+
