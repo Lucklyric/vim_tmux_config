@@ -2,9 +2,9 @@
 My Vim Tmux Configureation
 
 # pre-requirements
-1. Install vundle
+1. Install Vim-Plug 
  ```
- git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
  ```
 
 2. Install TPM tmux plugin manager
@@ -19,7 +19,7 @@ My Vim Tmux Configureation
 
 4. Open Vim and install plugins
  ```
- :PluginInstall
+ :PlugInstall
  ```
 
 5. Reload TMUX

@@ -1,58 +1,29 @@
-" File  : /home/alvinsun/.vimrc
-" Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
-" Date  : 31.10.2018
-" Terminal Foreground 256 168 251 HEX  #ffa8fb
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" specify a directory for plugins
 
-set nocompatible              " be iMproved, required
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-filetype off                  " required
-filetype plugin on
+Plug 'VundleVim/Vundle.vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'townk/vim-autoclose'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tenfyzhong/CompleteParameter.vim'
+" Plug 'alpertuna/vim-header'
+Plug 'Lucklyric/vim-header'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'townk/vim-autoclose'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tenfyzhong/CompleteParameter.vim'
-" Plugin 'alpertuna/vim-header'
-Plugin 'Lucklyric/vim-header'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" initialize plugin system
+call plug#end()
 filetype plugin indent on    " required
 syntax on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-"
-"
 
 " Own Setting
 set autoindent
@@ -178,4 +149,3 @@ let g:header_field_author_email = 'xinyao1@ualberta.ca'
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
-
