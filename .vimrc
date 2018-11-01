@@ -1,7 +1,16 @@
+" File  : .vimrc
+" Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
+" Date  : 01.11.2018
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+   
+set nocompatible              " be iMproved, required
 
+filetype off                  " required
+filetype plugin on
 " specify a directory for plugins
+
 
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -135,8 +144,8 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 """ Parameter Complete 
-set cmdheight=2
-let g:complete_parameter_echo_signature = 1
+" set cmdheight=2
+" let g:complete_parameter_echo_signature = 1
 inoremap <silent><expr> ( complete_parameter#pre_complete("()")
 smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
