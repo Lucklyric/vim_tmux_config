@@ -4,7 +4,7 @@
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-   
+
 set nocompatible              " be iMproved, required
 
 filetype off                  " required
@@ -22,10 +22,10 @@ Plug 'townk/vim-autoclose'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Valloric/YouCompleteMe' 
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tenfyzhong/CompleteParameter.vim'
+" Plug 'tenfyzhong/CompleteParameter.vim'
 " Plug 'alpertuna/vim-header'
 Plug 'Lucklyric/vim-header'
 
@@ -119,7 +119,7 @@ let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
-let g:ycm_add_preview_to_completeopt=0
+let g:ycm_add_preview_to_completeopt=1
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
@@ -143,14 +143,14 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-""" Parameter Complete 
+""" Parameter Complete
 " set cmdheight=2
 " let g:complete_parameter_echo_signature = 1
-inoremap <silent><expr> ( complete_parameter#pre_complete("()")
-smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+" inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+" smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+" imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+" smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+" imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
 """ Auto Header
 let g:header_field_author = 'Alvin(Xinyao) Sun'
