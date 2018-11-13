@@ -158,3 +158,9 @@ let g:header_field_author_email = 'xinyao1@ualberta.ca'
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
+
+""" Auto Formator
+let g:formatdef_yapf = "'yapf --style=\"{based_on_style=pep8,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
+let g:formatters_python=['yapf']
+
+
