@@ -94,7 +94,6 @@ set nowritebackup
 set noswapfile
 
 " Python yapf formatter
-autocmd FileType python nnoremap <leader>y :0,$!yapf --style='{based_on_style=pep8,spaces_before_comment=4,indent_width:4,column_limit:160}'<Cr><C-o>
 
 
 """"""""""""""""""""""""
@@ -160,7 +159,7 @@ let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
 
 """ Auto Formator
-let g:formatdef_yapf = "'yapf --style=\"{based_on_style=pep8,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
+let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
 
 
