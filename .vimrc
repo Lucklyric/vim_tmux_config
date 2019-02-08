@@ -2,10 +2,6 @@
 " Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
 " Date  : 01.11.2018
 
-" Terminal Color 
-" RGB rgb(255,168,251)
-" Hex ffa8fb
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
