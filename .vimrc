@@ -49,6 +49,8 @@ let mapleader = ","
 
 " Better copy & paste
 set pastetoggle=<F2>
+noremap  <leader><C-y> "+y
+noremap  <leader><C-p> "+p
 
 " Fold related
 set foldmethod=indent
