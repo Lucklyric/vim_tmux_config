@@ -31,6 +31,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 " Plug 'tenfyzhong/CompleteParameter.vim'
 " Plug 'alpertuna/vim-header'
+Plug 'vim-latex/vim-latex'
 Plug 'Lucklyric/vim-header'
 
 " initialize plugin system
@@ -98,6 +99,9 @@ set cursorline
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Latex setup
+let g:tex_flavor='latex'
 
 " Python yapf formatter
 
