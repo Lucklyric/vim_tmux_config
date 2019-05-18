@@ -7,6 +7,7 @@
 " Hex ffa8fb
 "
 " Automatic reloading of .vimrc
+set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
 
 set nocompatible              " be iMproved, required
@@ -33,6 +34,7 @@ Plug 'scrooloose/nerdcommenter'
 " Plug 'alpertuna/vim-header'
 Plug 'vim-latex/vim-latex'
 Plug 'Lucklyric/vim-header'
+Plug 'easymotion/vim-easymotion'
 
 " initialize plugin system
 call plug#end()
@@ -93,6 +95,9 @@ set shiftround
 set expandtab
 set nu
 set cursorline
+set cursorcolumn
+
+
 
 
 " Disable stupid backup
