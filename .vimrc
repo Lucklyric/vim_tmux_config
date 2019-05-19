@@ -35,6 +35,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-latex/vim-latex'
 Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
+Plug 'majutsushi/tagbar'
+
 
 " initialize plugin system
 call plug#end()
@@ -97,6 +99,9 @@ set nu
 set cursorline
 set cursorcolumn
 
+" tagbar short
+nmap <leader>TT :TagbarToggle<CR>
+let g:tagbar_autofocus=1
 
 
 
