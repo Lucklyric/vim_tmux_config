@@ -23,19 +23,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'Chiel92/vim-autoformat'
-Plug 'townk/vim-autoclose'
+" Plug 'townk/vim-autoclose'
+Plug 'Raimondi/delimitMate'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'tenfyzhong/CompleteParameter.vim'
+Plug 'tenfyzhong/CompleteParameter.vim'
 " Plug 'alpertuna/vim-header'
 Plug 'vim-latex/vim-latex'
 Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+" Plug 'neoclide/coc.nvim', {'branch':'release'}
 
 
 " initialize plugin system
@@ -130,18 +134,18 @@ let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 "let NERDTreeMinimalUI=1
 
 
-"""YouCompleteMe configuration
+""YouCompleteMe configuration
+let g:UltiSnipsExpandTrigger="<c-k>"
 noremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
 let g:ycm_min_num_of_chars_for_completion=2
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
 let g:ycm_add_preview_to_completeopt=1
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
+
 
 """ NERD Commenter
 " add spaces after comment delimiters by default
@@ -164,6 +168,7 @@ let g:NERDToggleCheckAllLines = 1
 
 """ Parameter Complete
 " set cmdheight=2
+" set noshowmode
 " let g:complete_parameter_echo_signature = 1
 " inoremap <silent><expr> ( complete_parameter#pre_complete("()")
 " smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
@@ -181,5 +186,20 @@ let g:header_field_modified_by = 0
 """ Auto Formator
 let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
+
+""" coc.nvim
+" Use K to show documentation in preview window
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
+"
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   else
+"     call CocAction('doHover')
+"   endif
+" endfunction
+"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
+"                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
 
 
