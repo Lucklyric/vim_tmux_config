@@ -40,7 +40,10 @@ Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
-
+"
+" - Front end
+Plug 'posva/vim-vue'
+Plug 'prettier/vim-prettier', {'do':'yarn install'}
 
 " initialize plugin system
 call plug#end()
