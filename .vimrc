@@ -39,6 +39,7 @@ Plug 'vim-latex/vim-latex'
 Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'severin-lemaignan/vim-minimap'
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
 "
 " - Front end
