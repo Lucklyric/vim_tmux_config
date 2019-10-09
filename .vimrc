@@ -66,8 +66,8 @@ let mapleader = ","
 
 " Better copy & paste
 set pastetoggle=<F2>
-noremap  <leader><C-y> "+y
-noremap  <leader><C-p> "+p
+noremap  <leader><c-y> "+y
+noremap  <leader><c-p> "+p
 
 " Fold related
 set foldmethod=indent
@@ -149,6 +149,7 @@ let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
 let g:ycm_add_preview_to_completeopt=1
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+highlight Pmenu ctermbg=black ctermfg=white
 
 
 """ NERD Commenter
@@ -205,5 +206,4 @@ let g:formatters_python=['yapf']
 "
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 "                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
-
 
