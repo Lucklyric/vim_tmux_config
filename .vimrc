@@ -45,6 +45,7 @@ Plug 'severin-lemaignan/vim-minimap'
 " - Front end
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {'do':'yarn install'}
+Plug 'leafgarland/typescript-vim'
 
 " initialize plugin system
 call plug#end()
