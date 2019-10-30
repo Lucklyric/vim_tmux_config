@@ -8,6 +8,7 @@
 "
 " Automatic reloading of .vimrc
 set encoding=utf-8
+set t_Co=256
 autocmd! bufwritepost .vimrc source %
 
 set nocompatible              " be iMproved, required
@@ -40,17 +41,25 @@ Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'tomasiser/vim-code-dark'
+Plug 'gosukiwi/vim-atom-dark'
+
+
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
 "
 " - Front end
 Plug 'posva/vim-vue'
-Plug 'prettier/vim-prettier', {'do':'yarn install'}
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
 syntax on
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
+"
 
 " Own Setting
 set autoindent
@@ -61,7 +70,7 @@ set shiftwidth=4
 set softtabstop=4
 syntax on
 let g:airline_theme='tomorrow'
-colorscheme darkBlue
+colorscheme atom
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
 
