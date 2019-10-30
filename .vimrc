@@ -41,9 +41,8 @@ Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'severin-lemaignan/vim-minimap'
-Plug 'tomasiser/vim-code-dark'
-Plug 'gosukiwi/vim-atom-dark'
-
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'xolox/vim-misc'
 
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
 "
@@ -59,6 +58,8 @@ call plug#end()
 filetype plugin indent on    " required
 syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+let g:python_highlight_all = 1
+
 "
 
 " Own Setting
