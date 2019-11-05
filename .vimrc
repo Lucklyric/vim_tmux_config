@@ -10,7 +10,9 @@
 set encoding=utf-8
 set t_Co=256
 autocmd! bufwritepost .vimrc source %
-
+if (has("termguicolors"))
+  set termguicolors
+endif
 set nocompatible              " be iMproved, required
 
 filetype off                  " required
@@ -43,6 +45,8 @@ Plug 'majutsushi/tagbar'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
 "
@@ -58,9 +62,17 @@ call plug#end()
 filetype plugin indent on    " required
 syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
-let g:python_highlight_all = 1
-
 "
+
+" Color Theme
+let g:airline_theme='tomorrow'
+" colorscheme hybrid_material
+colorscheme palenight
+" highlight Normal ctermbg=None guibg=NONE
+let g:palenight_terminal_italics=1
+" set background=dark
+let g:hybrid_transparent_background = 1
+
 
 " Own Setting
 set autoindent
@@ -70,8 +82,6 @@ set mouse=a
 set shiftwidth=4
 set softtabstop=4
 syntax on
-let g:airline_theme='tomorrow'
-colorscheme atom
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
 
