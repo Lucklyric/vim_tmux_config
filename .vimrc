@@ -64,14 +64,6 @@ syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
 
-" Color Theme
-let g:airline_theme='tomorrow'
-" colorscheme hybrid_material
-colorscheme palenight
-" highlight Normal ctermbg=None guibg=NONE
-let g:palenight_terminal_italics=1
-" set background=dark
-let g:hybrid_transparent_background = 1
 
 
 " Own Setting
@@ -228,3 +220,11 @@ let g:formatters_python=['yapf']
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 "                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
 
+" Color Theme
+let g:airline_theme='tomorrow'
+" colorscheme hybrid_material
+colorscheme palenight
+" let g:palenight_terminal_italics=1
+set background=dark
+" let g:hybrid_transparent_background = 1
+" hi! Normal ctermbg=NONE guibg=NONE
