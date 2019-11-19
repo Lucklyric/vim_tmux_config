@@ -39,6 +39,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
 " Plug 'alpertuna/vim-header'
 Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -133,6 +134,10 @@ set noswapfile
 
 " Latex setup
 let g:tex_flavor='latex'
+let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
+let g:Tex_ViewRule_pdf = 'evince'
+let g:vimtex_view_general_viewer = 'evince'
+
 
 " Python yapf formatter
 
@@ -219,6 +224,9 @@ let g:formatters_python=['yapf']
 "
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 "                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
+
+" Latex setting
+
 
 " Color Theme
 let g:airline_theme='tomorrow'
