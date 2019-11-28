@@ -69,10 +69,6 @@ syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e175badb67d24060aac52e84a40f9d86b34b4550
 " Own Setting
 set autoindent
 set expandtab
