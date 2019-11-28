@@ -47,6 +47,9 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'pseewald/vim-anyfold'
+
+
 
 " Plug 'neoclide/coc.nvim', {'branch':'release'}
 "
@@ -63,7 +66,6 @@ filetype plugin indent on    " required
 syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
-
 
 
 " Own Setting
@@ -161,6 +163,9 @@ let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_cache_omnifunc=0
 let g:ycm_complete_in_strings = 1
 let g:ycm_add_preview_to_completeopt=1
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 highlight Pmenu ctermbg=black ctermfg=white
 
@@ -219,6 +224,15 @@ let g:formatters_python=['yapf']
 "
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 "                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
+"
+
+" Any-fold
+filetype plugin indent on
+syntax on
+autocmd Filetype * AnyFoldActivate
+let g:anyfold_fold_comments=1
+set foldlevel=0
+
 
 " Color Theme
 let g:airline_theme='tomorrow'
@@ -227,4 +241,4 @@ colorscheme palenight
 " let g:palenight_terminal_italics=1
 set background=dark
 " let g:hybrid_transparent_background = 1
-" hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
