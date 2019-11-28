@@ -263,4 +263,4 @@ colorscheme palenight
 " let g:palenight_terminal_italics=1
 set background=dark
 " let g:hybrid_transparent_background = 1
-highlight! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
