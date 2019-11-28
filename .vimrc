@@ -39,6 +39,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
 " Plug 'alpertuna/vim-header'
 Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'Lucklyric/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -48,6 +49,7 @@ Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'pseewald/vim-anyfold'
+
 
 
 
@@ -67,7 +69,10 @@ syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e175badb67d24060aac52e84a40f9d86b34b4550
 " Own Setting
 set autoindent
 set expandtab
@@ -99,6 +104,20 @@ map <c-h> <c-w>h
 " Moving between tabs
 nmap <leader>n :tabprevious<CR>
 nmap <leader>m :tabnext<CR>
+
+" Togle spell check
+let g:spell_is_close = 1
+function! ToggleSpell()
+    if g:spell_is_close
+        setlocal spell spelllang=en_us
+        let g:spell_is_close = 0
+    else
+        setlocal nospell 
+        let g:spell_is_close = 1
+    endif
+endfunction
+
+nmap <leader>sp :call ToggleSpell()<CR>
 
 " easier moving of code blocks
 vnoremap < <gv
@@ -135,6 +154,10 @@ set noswapfile
 
 " Latex setup
 let g:tex_flavor='latex'
+let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
+let g:Tex_ViewRule_pdf = 'evince'
+let g:vimtex_view_general_viewer = 'evince'
+
 
 " Python yapf formatter
 
@@ -232,6 +255,9 @@ syntax on
 autocmd Filetype * AnyFoldActivate
 let g:anyfold_fold_comments=1
 set foldlevel=0
+
+
+" Latex setting
 
 
 " Color Theme
