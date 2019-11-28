@@ -48,7 +48,7 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'pseewald/vim-anyfold'
+" Plug 'pseewald/vim-anyfold'
 
 
 
@@ -246,11 +246,11 @@ let g:formatters_python=['yapf']
 "
 
 " Any-fold
-filetype plugin indent on
-syntax on
-autocmd Filetype * AnyFoldActivate
-let g:anyfold_fold_comments=1
-set foldlevel=0
+" filetype plugin indent on
+" syntax on
+" autocmd Filetype * AnyFoldActivate
+" let g:anyfold_fold_comments=1
+" set foldlevel=0
 
 
 " Latex setting
@@ -263,4 +263,4 @@ colorscheme palenight
 " let g:palenight_terminal_italics=1
 set background=dark
 " let g:hybrid_transparent_background = 1
-hi! Normal ctermbg=NONE guibg=NONE
+highlight! Normal ctermbg=NONE guibg=NONE
