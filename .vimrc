@@ -19,7 +19,6 @@ filetype off                  " required
 filetype plugin on
 " specify a directory for plugins
 
-
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -173,7 +172,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 
 
 ""YouCompleteMe configuration
-let g:UltiSnipsExpandTrigger="<c-k>"
+" let g:UltiSnipsExpandTrigger="<c-k>"
 noremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
@@ -251,10 +250,18 @@ let g:formatters_python=['yapf']
 " autocmd Filetype * AnyFoldActivate
 " let g:anyfold_fold_comments=1
 " set foldlevel=0
+"
 
+""" Snips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Latex setting
-
 
 " Color Theme
 let g:airline_theme='tomorrow'
