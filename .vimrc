@@ -48,6 +48,8 @@ Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'pseewald/vim-anyfold'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 
 
