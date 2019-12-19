@@ -23,7 +23,7 @@ filetype plugin on
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'townk/vim-autoclose'
 Plug 'Raimondi/delimitMate'
@@ -51,11 +51,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'sheerun/vim-polyglot'
-
-
-
-
+" Plug 'sheerun/vim-polyglot'
 "
 " - Front end
 " Plug 'posva/vim-vue'
@@ -273,6 +269,7 @@ let g:airline_theme='tomorrow'
 " colorscheme hybrid_material
 colorscheme palenight
 " let g:palenight_terminal_italics=1
+
 set background=dark
 " let g:hybrid_transparent_background = 1
 hi! Normal ctermbg=NONE guibg=NONE
