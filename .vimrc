@@ -50,6 +50,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'pseewald/vim-anyfold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 
 
 
@@ -68,7 +70,6 @@ Plug 'neoclide/coc.nvim', {'branch':'release'}
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
-syntax on
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
 
