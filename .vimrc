@@ -32,7 +32,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
@@ -50,15 +50,15 @@ Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'pseewald/vim-anyfold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 " Plug 'sheerun/vim-polyglot'
 "
 " - Front end
 " Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'pangloss/vim-javascript'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 
 Plug 'neoclide/coc.nvim', {'branch':'release'}
@@ -175,6 +175,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 ""YouCompleteMe configuration
 " let g:UltiSnipsExpandTrigger="<c-k>"
 noremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_filetype_whitelist = {'c':1,'cpp':1,'cuda':1}
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
 let g:ycm_min_num_of_chars_for_completion=2
