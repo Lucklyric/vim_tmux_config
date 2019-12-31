@@ -61,7 +61,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 
-Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'neoclide/coc.nvim', {'do':'git checkout release'}
 
 " initialize plugin system
 call plug#end()
@@ -405,6 +405,9 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+autocmd BufNew,BufEnter *.c,*.cpp,*.cu execute "silent! CocDisable"
+autocmd BufLeave *.c,*.cpp,*.cu execute "silent! CocEnable"
 
 map <silent> zs :for id in synstack(line("."), col("."))<bar>
       \ echo synIDattr(id, "name").' '<bar> execute 'echohl' synIDattr(synIDtrans(id), "name") <bar> echon synIDattr(synIDtrans(id), "name") <bar> echohl None <bar>
