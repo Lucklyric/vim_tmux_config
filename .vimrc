@@ -9,6 +9,7 @@
 " Automatic reloading of .vimrc
 set encoding=utf-8
 set t_Co=256
+set rnu
 autocmd! bufwritepost .vimrc source %
 if (has("termguicolors"))
   set termguicolors
@@ -276,7 +277,7 @@ set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 
 """ COC
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java']
 " if hidden is not set, TextEdit might fail.
 set hidden
 
