@@ -7,7 +7,7 @@
 " Hex ffa8fb
 "
 " Automatic reloading of .vimrc
-set encoding=utf-8
+set encoding=UTF-8
 set t_Co=256
 set rnu
 autocmd! bufwritepost .vimrc source %
@@ -24,20 +24,17 @@ filetype plugin on
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Plug 'VundleVim/Vundle.vim'
 Plug 'Chiel92/vim-autoformat'
-" Plug 'townk/vim-autoclose'
 Plug 'Raimondi/delimitMate'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
-" Plug 'alpertuna/vim-header'
 Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'Lucklyric/vim-header'
@@ -48,11 +45,11 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'pseewald/vim-anyfold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-" Plug 'sheerun/vim-polyglot'
+Plug 'kien/ctrlp.vim'
+
 "
 " - Front end
 " Plug 'posva/vim-vue'
@@ -60,13 +57,13 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
-
-
-Plug 'neoclide/coc.nvim', {'do':'git checkout release'}
+" Plug 'neoclide/coc.nvim', {'do':'git checkout release & git pull & npm install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
+
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 "
 
@@ -80,6 +77,7 @@ set softtabstop=4
 syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
+set clipboard+=unnamedplus
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -156,8 +154,6 @@ let g:Tex_ViewRule_pdf = 'evince'
 let g:vimtex_view_general_viewer = 'evince'
 
 
-" Python yapf formatter
-
 
 """"""""""""""""""""""""
 " Plugin Configuration
@@ -174,21 +170,20 @@ let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 
 
 ""YouCompleteMe configuration
-" let g:UltiSnipsExpandTrigger="<c-k>"
-noremap <leader>jd :YcmCompleter GoTo<CR>
-let g:ycm_filetype_whitelist = {'c':1,'cpp':1,'cuda':1}
-let g:ycm_confirm_extra_conf=0
-set completeopt=longest,menu
-let g:ycm_min_num_of_chars_for_completion=2
-" let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_cache_omnifunc=0
-let g:ycm_complete_in_strings = 1
-let g:ycm_add_preview_to_completeopt=1
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-highlight Pmenu ctermbg=black ctermfg=white
+" noremap <leader>jd :YcmCompleter GoTo<CR>
+" let g:ycm_filetype_whitelist = {'c':1,'cpp':1,'cuda':1}
+" let g:ycm_confirm_extra_conf=0
+" set completeopt=longest,menu
+" let g:ycm_min_num_of_chars_for_completion=2
+" " let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_cache_omnifunc=0
+" let g:ycm_complete_in_strings = 1
+" let g:ycm_add_preview_to_completeopt=1
+" let g:ycm_show_diagnostics_ui = 1
+" let g:ycm_enable_diagnostic_signs = 0
+" let g:ycm_enable_diagnostic_highlighting = 0
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" highlight Pmenu ctermbg=black ctermfg=white
 
 
 """ NERD Commenter
@@ -231,21 +226,6 @@ let g:header_field_modified_by = 0
 let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
 
-""" coc.nvim
-" Use K to show documentation in preview window
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-"
-" function! s:show_documentation()
-"   if (index(['vim','help'], &filetype) >= 0)
-"     execute 'h '.expand('<cword>')
-"   else
-"     call CocAction('doHover')
-"   endif
-" endfunction
-"
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
-"                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>
-"
 
 " Any-fold
 " filetype plugin indent on
@@ -277,7 +257,7 @@ set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 
 """ COC
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets']
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -317,7 +297,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> complselected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -413,3 +393,19 @@ autocmd BufLeave *.c,*.cpp,*.cu execute "silent! CocEnable"
 map <silent> zs :for id in synstack(line("."), col("."))<bar>
       \ echo synIDattr(id, "name").' '<bar> execute 'echohl' synIDattr(synIDtrans(id), "name") <bar> echon synIDattr(synIDtrans(id), "name") <bar> echohl None <bar>
       \ endfor<CR>
+
+" coc-snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
