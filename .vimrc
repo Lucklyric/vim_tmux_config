@@ -48,7 +48,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'kien/ctrlp.vim'
+Plug 'voldikss/vim-floaterm'
 
 "
 " - Front end
@@ -57,8 +57,8 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'neoclide/coc.nvim', {'do':'git checkout release & git pull & npm install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'HerringtonDarkholme/yats.vim' 
 
 " initialize plugin system
 call plug#end()
@@ -78,6 +78,9 @@ syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
 set clipboard+=unnamedplus
+
+" CtrpP but with ag
+noremap <c-p> :Ag<CR>
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -167,6 +170,18 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 "let NERDTreeMinimalUI=1
+
+""FloatVim
+nnoremap <s-t>n :FloatermNew<CR>
+tnoremap <s-t>n <C-\><C-n>:FloatermNew<CR>
+nnoremap <s-t>h :FloatermPre<CR>
+tnoremap <s-t>h <C-\><C-n>:FloatermPre<CR>
+nnoremap <s-t>h :FloatermNext<CR>
+tnoremap <s-t>l <C-\><C-n>:FloatermNext<CR>
+nnoremap <s-t>t :FloatermToggle<CR>
+tnoremap <s-t>t <C-\><C-n>:FloatermToggle<CR>
+
+nnoremap <s-t>f :FloatermNew fzf<CR>
 
 
 ""YouCompleteMe configuration
