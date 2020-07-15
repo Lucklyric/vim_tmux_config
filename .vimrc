@@ -307,7 +307,7 @@ hi! Normal ctermbg=NONE guibg=NONE
 """ COC Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets', 'coc-git']
 " if hidden is not set, TextEdit might fail.
 set hidden
 
