@@ -49,8 +49,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'voldikss/vim-floaterm'
+Plug 'vim-scripts/bufexplorer.zip'
 
-"
+
 " - Front end
 " Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -65,7 +66,6 @@ call plug#end()
 filetype plugin indent on    " required
 
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
-"
 
 " Own Setting
 set autoindent
@@ -121,9 +121,6 @@ nmap <leader>sp :call ToggleSpell()<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" NERDTree configuration
-map <C-n> :NERDTreeToggle<CR>
-
 " map sort function to a key
 vnoremap <leader>s :sort<CR>
 
@@ -139,39 +136,43 @@ set nu
 set cursorline
 set cursorcolumn
 
-" tagbar short
-nmap <leader>TT :TagbarToggle<CR>
-let g:tagbar_autofocus=1
-
-
 
 " Disable stupid backup
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Latex setup
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  Latex Setup
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:tex_flavor='latex'
 let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
 let g:Tex_ViewRule_pdf = 'evince'
 let g:vimtex_view_general_viewer = 'evince'
 
 
-
 """"""""""""""""""""""""
 " Plugin Configuration
 "
 """"""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  Tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+nmap <leader>bb :BufExplorer<CR>
 
-" NERDTreeConfiguration
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  Tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+nmap <leader>TT :TagbarToggle<CR>
+let g:tagbar_autofocus=1
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
-"let NERDTreeMinimalUI=1
-
-""FloatVim
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  Float Terminal VIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 nnoremap <s-t>n :FloatermNew<CR>
 tnoremap <s-t>n <C-\><C-n>:FloatermNew<CR>
 nnoremap <s-t>h :FloatermPre<CR>
@@ -200,8 +201,22 @@ nnoremap <s-t>f :FloatermNew fzf<CR>
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " highlight Pmenu ctermbg=black ctermfg=white
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" NERD Tree 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+" NERDTree configuration
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-""" NERD Commenter
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" NERD Comment 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 " add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -230,14 +245,21 @@ let g:NERDToggleCheckAllLines = 1
 " smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 """ Auto Header
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:header_field_author = 'Alvin(Xinyao) Sun'
 let g:header_field_author_email = 'xinyao1@ualberta.ca'
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
 
-""" Auto Formator
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" Formater 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
 
@@ -250,7 +272,11 @@ let g:formatters_python=['yapf']
 " set foldlevel=0
 "
 
-""" Snips
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" Snips 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -261,7 +287,11 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Latex setting
 
-" Color Theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" Color Theme Setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:airline_theme='tomorrow'
 " colorscheme hybrid_material
 colorscheme palenight
@@ -271,7 +301,12 @@ set background=dark
 " let g:hybrid_transparent_background = 1
 hi! Normal ctermbg=NONE guibg=NONE
 
-""" COC
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" COC Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets']
 " if hidden is not set, TextEdit might fail.
 set hidden
