@@ -50,6 +50,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'voldikss/vim-floaterm'
 Plug 'vim-scripts/bufexplorer.zip'
+Plug 'Yggdroot/indentLine'
+Plug 'pseewald/vim-anyfold'
 
 
 " - Front end
@@ -78,6 +80,8 @@ syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
 set clipboard+=unnamedplus
+set wildmenu
+set wildmode=longest:full,full
 
 " CtrpP but with ag
 noremap <c-p> :Ag<CR>
@@ -264,13 +268,15 @@ let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_com
 let g:formatters_python=['yapf']
 
 
-" Any-fold
-" filetype plugin indent on
-" syntax on
-" autocmd Filetype * AnyFoldActivate
-" let g:anyfold_fold_comments=1
-" set foldlevel=0
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""" Any-Fold
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+filetype plugin indent on
+syntax on
+autocmd Filetype * AnyFoldActivate
+let g:anyfold_fold_comments=1
+set foldlevel=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
@@ -456,6 +462,6 @@ let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
-
+    
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
