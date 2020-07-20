@@ -52,6 +52,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'Yggdroot/indentLine'
 Plug 'pseewald/vim-anyfold'
+Plug 'mbbill/undotree'
 
 
 " - Front end
@@ -82,6 +83,10 @@ let mapleader = ","
 set clipboard+=unnamedplus
 set wildmenu
 set wildmode=longest:full,full
+set colorcolumn=80
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
 
 " CtrpP but with ag
 noremap <c-p> :Ag<CR>
@@ -107,19 +112,6 @@ map <c-h> <c-w>h
 nmap <leader>n :tabprevious<CR>
 nmap <leader>m :tabnext<CR>
 
-" Togle spell check
-let g:spell_is_close = 1
-function! ToggleSpell()
-    if g:spell_is_close
-        setlocal spell spelllang=en_us
-        let g:spell_is_close = 0
-    else
-        setlocal nospell 
-        let g:spell_is_close = 1
-    endif
-endfunction
-
-nmap <leader>sp :call ToggleSpell()<CR>
 
 " easier moving of code blocks
 vnoremap < <gv
@@ -145,6 +137,47 @@ set cursorcolumn
 set nobackup
 set nowritebackup
 set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  Custom functions 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
+" Togle spell check
+let g:spell_is_close = 1
+function! ToggleSpell()
+    if g:spell_is_close
+        setlocal spell spelllang=en_us
+        let g:spell_is_close = 0
+    else
+        setlocal nospell 
+        let g:spell_is_close = 1
+    endif
+endfunction
+
+nmap <leader>sp :call ToggleSpell()<CR>
+
+" Check dirs
+function! EnsureDirExists (dir)
+  if !isdirectory(a:dir)
+    if exists("*mkdir")
+      call mkdir(a:dir,'p')
+      echo "Created directory: " . a:dir
+    else
+      echo "Please create directory: " . a:dir
+    endif
+  endif
+endfunction
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""  UndoTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+call EnsureDirExists($HOME . '/.vim/undodir')
+nnoremap <leader>ud :UndotreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
