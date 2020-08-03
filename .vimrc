@@ -143,7 +143,7 @@ set noswapfile
 """  Custom functions 
 """""""""""""""""""""""""""""""""""""""""""""""""""" 
 
-" Togle spell check
+" Toggle spell check
 let g:spell_is_close = 1
 function! ToggleSpell()
     if g:spell_is_close
