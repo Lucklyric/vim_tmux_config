@@ -53,6 +53,8 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'Yggdroot/indentLine'
 Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-startify'
+
 
 
 " - Front end
