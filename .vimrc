@@ -2,7 +2,7 @@
 " Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
 " Date  : 01.11.2018
 
-" Terminal Color 
+" Terminal Color
 " RGB rgb(255,168,251)
 " Hex ffa8fb
 "
@@ -12,7 +12,7 @@ set t_Co=256
 set rnu
 autocmd! bufwritepost .vimrc source %
 if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
 endif
 set nocompatible              " be iMproved, required
 
@@ -64,7 +64,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'HerringtonDarkholme/yats.vim' 
+Plug 'HerringtonDarkholme/yats.vim'
 
 " initialize plugin system
 call plug#end()
@@ -140,10 +140,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""  Custom functions 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""  Custom functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Toggle spell check
 let g:spell_is_close = 1
@@ -152,7 +152,7 @@ function! ToggleSpell()
         setlocal spell spelllang=en_us
         let g:spell_is_close = 0
     else
-        setlocal nospell 
+        setlocal nospell
         let g:spell_is_close = 1
     endif
 endfunction
@@ -161,30 +161,30 @@ nmap <leader>sp :call ToggleSpell()<CR>
 
 " Check dirs
 function! EnsureDirExists (dir)
-  if !isdirectory(a:dir)
-    if exists("*mkdir")
-      call mkdir(a:dir,'p')
-      echo "Created directory: " . a:dir
-    else
-      echo "Please create directory: " . a:dir
+    if !isdirectory(a:dir)
+        if exists("*mkdir")
+            call mkdir(a:dir,'p')
+            echo "Created directory: " . a:dir
+        else
+            echo "Please create directory: " . a:dir
+        endif
     endif
-  endif
 endfunction
 
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  UndoTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 call EnsureDirExists($HOME . '/.vim/undodir')
 nnoremap <leader>ud :UndotreeToggle<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  Latex Setup
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
 let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
 let g:Tex_ViewRule_pdf = 'evince'
@@ -195,23 +195,23 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  Tagbar
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>bb :BufExplorer<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  Tagbar
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>TT :TagbarToggle<CR>
 let g:tagbar_autofocus=1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  Float Terminal VIM
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <s-t>n :FloatermNew<CR>
 tnoremap <s-t>n <C-\><C-n>:FloatermNew<CR>
 nnoremap <s-t>h :FloatermPre<CR>
@@ -240,10 +240,10 @@ nnoremap <s-t>f :FloatermNew fzf<CR>
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " highlight Pmenu ctermbg=black ctermfg=white
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-""" NERD Tree 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" NERD Tree
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
@@ -252,10 +252,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-""" NERD Comment 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" NERD Comment
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -284,10 +284,10 @@ let g:NERDToggleCheckAllLines = 1
 " smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Auto Header
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:header_field_author = 'Alvin(Xinyao) Sun'
 let g:header_field_author_email = 'xinyao1@ualberta.ca'
 let g:header_auto_add_header = 0
@@ -295,29 +295,29 @@ let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-""" Formater 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Formater
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Any-Fold
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 syntax on
 autocmd Filetype * AnyFoldActivate
 let g:anyfold_fold_comments=1
 set foldlevel=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-""" Snips 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Snips
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -328,11 +328,11 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Latex setting
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Color Theme Setting
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='tomorrow'
 " colorscheme hybrid_material
 colorscheme palenight
@@ -343,11 +343,11 @@ set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ COC Configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets', 'coc-git', 'coc-yank', 'https://github.com/SvenBecker/vscode-pytorch', 'https://github.com/xabikos/vscode-react']
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -371,14 +371,14 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -404,11 +404,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
@@ -422,11 +422,11 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
@@ -482,8 +482,8 @@ autocmd BufNew,BufEnter *.c,*.cpp,*.cu execute "silent! CocDisable"
 autocmd BufLeave *.c,*.cpp,*.cu execute "silent! CocEnable"
 
 map <silent> zs :for id in synstack(line("."), col("."))<bar>
-      \ echo synIDattr(id, "name").' '<bar> execute 'echohl' synIDattr(synIDtrans(id), "name") <bar> echon synIDattr(synIDtrans(id), "name") <bar> echohl None <bar>
-      \ endfor<CR>
+            \ echo synIDattr(id, "name").' '<bar> execute 'echohl' synIDattr(synIDtrans(id), "name") <bar> echon synIDattr(synIDtrans(id), "name") <bar> echohl None <bar>
+            \ endfor<CR>
 
 " coc-snippets
 " Use <C-l> for trigger snippet expand.
@@ -497,6 +497,6 @@ let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
-    
+
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
