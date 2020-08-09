@@ -54,6 +54,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
+Plug 'roryokane/detectindent'
+Plug 'tpope/vim-fugitive'
 
 
 " - Front end
@@ -73,6 +75,7 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " Own Setting
 set autoindent
+set cindent
 set expandtab
 set laststatus=2
 set mouse+=a
@@ -81,8 +84,9 @@ if has("mouse_sgr")
 else
     set ttymouse=xterm2
 end
-set shiftwidth=4
+set shiftwidth=2
 set softtabstop=4
+set tabstop=4
 syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
@@ -175,6 +179,10 @@ function! EnsureDirExists (dir)
     endif
 endfunction
 
+augroup DetectIndent
+   autocmd!
+   autocmd BufReadPost *  DetectIndent
+augroup END
 
 
 
@@ -337,8 +345,9 @@ let g:UltiSnipsEditSplit="vertical"
 """ Color Theme Setting
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='tomorrow'
-" colorscheme hybrid_material
+let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 1
+" colorscheme hybrid_mateial
 colorscheme palenight
 " let g:palenight_terminal_italics=1
 
