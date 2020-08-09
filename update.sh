@@ -2,4 +2,4 @@
 git pull
 cp .vimrc ~/
 cp .tmux.conf ~/
-cp -r .config ~/ 
+ln -sf ~/.vimrc ~/.config/nvim/init.vim

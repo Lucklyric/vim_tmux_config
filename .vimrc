@@ -56,7 +56,6 @@ Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 
 
-
 " - Front end
 " Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -76,7 +75,12 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 set autoindent
 set expandtab
 set laststatus=2
-set mouse=a
+set mouse+=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 set shiftwidth=4
 set softtabstop=4
 syntax on
