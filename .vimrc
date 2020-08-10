@@ -90,7 +90,7 @@ set tabstop=4
 syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set wildmenu
 set wildmode=longest:full,full
 set colorcolumn=80
