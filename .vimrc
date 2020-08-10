@@ -345,7 +345,7 @@ let g:UltiSnipsEditSplit="vertical"
 """ Color Theme Setting
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='base16'
+let g:airline_theme='fruit_punch'
 let g:airline#extensions#tabline#enabled = 1
 " colorscheme hybrid_mateial
 colorscheme palenight
