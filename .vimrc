@@ -21,7 +21,7 @@ filetype plugin on
 " specify a directory for plugins
 
 " - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
+" - Avoid using standard Vim diretomasiser/vim-code-darkctory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 Plug 'Chiel92/vim-autoformat'
@@ -56,7 +56,6 @@ Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'roryokane/detectindent'
 Plug 'tpope/vim-fugitive'
-
 
 " - Front end
 " Plug 'posva/vim-vue'
@@ -347,13 +346,14 @@ let g:UltiSnipsEditSplit="vertical"
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='fruit_punch'
 let g:airline#extensions#tabline#enabled = 1
-" colorscheme hybrid_mateial
-colorscheme palenight
-" let g:palenight_terminal_italics=1
-
 set background=dark
+colorscheme palenight
+" colorscheme codedark
+" let g:palenight_terminal_italics=1
 " let g:hybrid_transparent_background = 1
-hi! Normal ctermbg=NONE guibg=NONE
+if !has('gui_running')
+  hi! Normal ctermbg=NONE guibg=NONE
+endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
