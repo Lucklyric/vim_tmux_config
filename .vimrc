@@ -91,7 +91,7 @@ noremap <F3> :Autoformat<CR>
 let mapleader = ","
 set clipboard=unnamedplus
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,list,full
 set colorcolumn=80
 set undodir=~/.vim/undodir
 set undofile
