@@ -354,7 +354,7 @@ colorscheme palenight
 if !has('gui_running')
   hi! Normal ctermbg=NONE guibg=NONE
 endif
-
+highlight MatchParen ctermbg=blue guibg=lightblue
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
