@@ -361,7 +361,25 @@ highlight MatchParen ctermbg=blue guibg=lightblue
 """ COC Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python', 'coc-css', 'coc-html', 'coc-emmet', 'coc-prettier', 'coc-eslint', 'coc-java', 'coc-prettier', 'coc-snippets', 'coc-git', 'coc-yank', 'https://github.com/SvenBecker/vscode-pytorch', 'https://github.com/xabikos/vscode-react']
+let g:coc_global_extensions = ['coc-json',
+            \'coc-tsserver', 
+            \'coc-python', 
+            \'coc-css', 
+            \'coc-html', 
+            \'coc-emmet', 
+            \'coc-prettier', 
+            \'coc-eslint', 
+            \'coc-java', 
+            \'coc-prettier', 
+            \'coc-snippets', 
+            \'coc-git', 
+            \'coc-yank', 
+            \'https://github.com/SvenBecker/vscode-pytorch', 
+            \'https://github.com/xabikos/vscode-react', 
+            \'coc-marketplace',
+            \'coc-json',
+            \'coc-ccls',
+            \]
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
