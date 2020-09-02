@@ -378,7 +378,6 @@ let g:coc_global_extensions = ['coc-json',
             \'https://github.com/xabikos/vscode-react', 
             \'coc-marketplace',
             \'coc-json',
-            \'coc-ccls',
             \]
 
 
