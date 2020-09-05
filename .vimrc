@@ -81,8 +81,6 @@ set laststatus=2
 set mouse+=a
 if has("mouse_sgr")
     set ttymouse=sgr
-else
-    set ttymouse=xterm2
 end
 set shiftwidth=2
 set softtabstop=4
@@ -376,9 +374,9 @@ let g:coc_global_extensions = ['coc-json',
             \'coc-prettier', 
             \'coc-eslint', 
             \'coc-java', 
+            \'coc-git',
             \'coc-prettier', 
             \'coc-snippets', 
-            \'coc-git', 
             \'coc-yank', 
             \'https://github.com/SvenBecker/vscode-pytorch', 
             \'https://github.com/xabikos/vscode-react', 
