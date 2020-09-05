@@ -79,9 +79,13 @@ set cindent
 set expandtab
 set laststatus=2
 set mouse+=a
-if has("mouse_sgr")
-    set ttymouse=sgr
-end
+if !has('nvim')
+    if has("mouse_sgr")
+        set ttymouse=sgr
+    else 
+        set ttymouse=xterm2
+    endif
+endif
 set shiftwidth=2
 set softtabstop=4
 set tabstop=4
@@ -90,7 +94,7 @@ noremap <F3> :Autoformat<CR>
 let mapleader = ","
 set clipboard=unnamedplus
 set wildmenu
-set wildmode=longest,list,full
+" set wildmode=longest,list,full
 set colorcolumn=80
 set undodir=~/.vim/undodir
 set undofile
