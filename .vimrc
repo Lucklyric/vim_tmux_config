@@ -56,6 +56,7 @@ Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'roryokane/detectindent'
 Plug 'tpope/vim-fugitive'
+Plug 'liuchengxu/vim-which-key'
 
 " - Front end
 " Plug 'posva/vim-vue'
@@ -183,6 +184,11 @@ augroup DetectIndent
    autocmd BufReadPost *  DetectIndent
 augroup END
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" which key 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader> :WhichKey ','<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
