@@ -58,6 +58,7 @@ Plug 'mhinz/vim-startify'
 Plug 'roryokane/detectindent'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " - Front end
 " Plug 'posva/vim-vue'
