@@ -59,6 +59,7 @@ Plug 'roryokane/detectindent'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'sheerun/vim-polyglot'
 
 " - Front end
 " Plug 'posva/vim-vue'
@@ -70,6 +71,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
+
+" debuger
+Plug 'puremourning/vimspector'
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
